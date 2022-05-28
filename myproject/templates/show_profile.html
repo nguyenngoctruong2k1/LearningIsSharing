@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load mon_hoc_tags %}
+{% load myfilters %}
+{% load static %}
+{% block title %}{{ data.User.username }} | {{ data.User.first_name }}{% endblock %}
+{% block content_title %}Profile of {{ data.User.username }}{% endblock %}
+{% block content_top %}
+
+{% endblock %}
+
+{% block content %}
+<div class="row col-12 list-subject justify-content-center" style="margin-bottom: 30px">
+    <div class="col-12 col-lg-11 row justify-content-center" style="padding-top: 30px;" >
+        <div class="col-12 col-md-4" style="font-size: 30px;">
+            <div class="avatar" id="profile-avatar" style="
+                background-image: url('{{ data.User.last_name }}');
+                width:200px;
+                height:200px;
+                background-position: center; 
+                background-repeat: no-repeat; 
+                background-size: cover; 
+                border-radius: 50% ;
+                position: relative;
+                margin:auto;
+            " onchange= profile-avatar()>
+            </div>
+        </div>
+        <div class="col-12 col-md-8">
+            <div class="form-group row">
+                <label class="col-md-3 col-lg-2  ">Họ và tên:</label>
+                <div class="col-md-9 col-lg-10 align-self-center">
+                    {{ data.User.first_name }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-lg-2 ">Username:</label>
+                <div class="col-md-9 col-lg-10">
+                    {{ data.User.username }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-lg-2 ">Lớp:</label>
+                <div class="col-md-9 col-lg-10">{{ data.Class }}</div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-lg-2 ">Facebook:</label>
+                <div class="col-md-9 col-lg-10">
+                    {{ data.Facebook }}
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label  class="col-md-3 col-lg-2 ">Github:</label>
+                <div class="col-md-9 col-lg-10">
+                    {{ data.Github }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-lg-2 ">Email:</label>
+                <div class="col-md-9 col-lg-10">
+                    {{ data.User.email }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-lg-2 ">Tự bạch:</label>
+                <div class="col-md-9 col-lg-10">
+                    {{ data.Bio }}
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
